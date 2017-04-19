@@ -28,3 +28,43 @@
 ![](https://github.com/VisViva/test/blob/master/mockups/4.png)
 ![](https://github.com/VisViva/test/blob/master/mockups/5.png)
 ![](https://github.com/VisViva/test/blob/master/mockups/6.png)
+
+## Approximated directory tree before the development process actually started
+
+	.
+	├── app
+	│   ├── components
+	│   │   ├── list
+	│   │   │   ├── list.component.js
+	│   │   │   └── etc...
+	│   │   └── list-item
+	│   │       ├── list-item.component.js
+	│   │       └── etc...
+	│   ├── views
+	│   │   ├── signup
+	│   │   │   ├── signup.component.js
+	│   │   │   └── etc...
+	│   │   ├── signin
+	│   │   │   ├── signin.component.js
+	│   │   │   └── etc...
+	│   │   ├── all
+	│   │   │   ├── all.component.js
+	│   │   │   └── etc...
+	│   │   ├── my
+	│   │   │   ├── my.component.js
+	│   │   │   └── etc...
+	│   │   ├── search
+	│   │   │   ├── search.component.js
+	│   │   │   └── etc...
+	│   ├── services
+	│   │   ├── authorization.service.js
+	│   │   └── views.js
+	│   ├── index.html
+	│   └── index.js
+	├── package.json
+	├── README.md
+	└── etc...
+
+
+
+
