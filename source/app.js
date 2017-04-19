@@ -4,7 +4,7 @@
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import ocLazyLoad from 'oclazyload'
+import ocLazyLoad from 'oclazyload';
 
 /**
  * Vendor styles
@@ -17,7 +17,6 @@ import 'bootstrap/dist/css/bootstrap.css';
  * Components
  */
 
-import Views from './views/views';
 import AppComponent from './app.component';
 
 /**
@@ -26,19 +25,18 @@ import AppComponent from './app.component';
 
 angular.module('app', [
         uiRouter,
-        ocLazyLoad,
-        Views
+        ocLazyLoad
     ])
     .config(($locationProvider, $stateProvider, $urlRouterProvider) => {
         "ngInject";
         $locationProvider.html5Mode(true).hashPrefix('!');
         $stateProvider
             .state('app', {
-                url: '/app',
+                url: '',
                 abstract: true,
                 template: '<app></app>'
             })
-            .state('app.signup', {
+            .state('signup', {
                 url: '/signup',
                 template: '<signup></signup>',
                 resolve: {
@@ -56,6 +54,6 @@ angular.module('app', [
                     }
                 }
             });
-        $urlRouterProvider.otherwise('/app/signup');
+        $urlRouterProvider.otherwise('signup');
     })
     .component('app', AppComponent);
