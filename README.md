@@ -14,13 +14,15 @@
 
 -	Как пользователь, я хочу иметь возможность регистрироваться, предоставив мое имя, фамилию, адрес электронной почты и пароль. После этого я должен иметь возможность доступа в приватную часть веб приложения после совершения входа в систему используя адрес электронной почты и пароль.
 
--	Как зарегистрированный пользователь, я хочу иметь возможность видеть контакты всех остальных пользователей системы в качестве.
+-	Как зарегистрированный пользователь, я хочу иметь возможность видеть контакты всех остальных пользователей системы в качестве списка.
 
 -	Как зарегистрированный пользователь, я хочу иметь возможность видеть все мои контакты, редактировать или удалять их, а также добавлять новые контакты.
 
 -	Как зарегистрированный пользователь, я хочу иметь возможность осуществлять поиск по моим контактам по имени и фамилии, а также видеть результаты поиска.
 
 ## Mockup Images
+
+Mockups url: http://tiny.cc/voinky
 
 ![](https://github.com/VisViva/test/blob/master/mockups/1.png)
 ![](https://github.com/VisViva/test/blob/master/mockups/2.png)
@@ -73,7 +75,7 @@
 	which will affect the overall estimations. =)
 
 	Implementing the application seed based on the best practices but also
-	strictly following the instructions and architectural choices
+	strictly following the instructions and architectural choices in the requirements
 
 	~ 3-6 hours
 
