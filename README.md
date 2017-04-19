@@ -65,6 +65,26 @@
 	├── README.md
 	└── etc...
 
+## Estimations
 
+	Take into consideration the fact that I currently don't have reusable
+	pieces of angularjs code (and also haven't been using the framework in a while).
+	Esentially this means that most of the code will be implemented from scratch
+	which will affect the overall estimations. =)
 
+	Implementing the application seed based on the best practices but also
+	strictly following the instructions and architectural choices
 
+	~ 3-6 hours
+
+	Mocking backend and implementing the authorization pipeline
+
+	~ 2-4 hours
+
+	Implementing views and directives
+
+	~ 3-5 hours
+
+	Tests
+
+	~ 1-2 hours
