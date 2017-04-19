@@ -26,7 +26,7 @@ let resolveToComponents = (glob = '') => {
 };
 
 let paths = {
-    js: resolveToComponents('**/*.js'),
+    js: resolveToComponents('**/*!(.spec.js).js'),
     scss: resolveToApp('**/*.scss'),
     html: [
         resolveToApp('**/*.html'),
