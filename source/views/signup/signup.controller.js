@@ -1,6 +1,6 @@
 class SignupController {
-    constructor() {
-
+    constructor(StoreService) {
+        "ngInject";
     }
 }
 

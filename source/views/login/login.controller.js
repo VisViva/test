@@ -1,6 +1,6 @@
 class LoginController {
-    constructor() {
-
+    constructor(StoreService) {
+        "ngInject";
     }
 }
 

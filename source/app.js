@@ -7,6 +7,14 @@ import uiRouter from 'angular-ui-router';
 import ocLazyLoad from 'oclazyload';
 
 /**
+ * Modules
+ */
+
+import { StoreService } from './services/store';
+import { AuthorizationService } from './services/authorization';
+import { ContactsService } from './services/contacts';
+
+/**
  * Vendor styles
  */
 
@@ -27,6 +35,9 @@ angular.module('app', [
         uiRouter,
         ocLazyLoad
     ])
+    .service('StoreService', StoreService)
+    .service('AuthorizationService', AuthorizationService)
+    .service('ContactsService', ContactsService)
     .config(($locationProvider, $stateProvider, $urlRouterProvider) => {
         "ngInject";
         $locationProvider.html5Mode(true).hashPrefix('!');
