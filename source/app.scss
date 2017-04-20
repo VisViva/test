@@ -1,3 +1,10 @@
+html,
+body {
+    background: #f9f9f9;
+}
+
 .app {
-    &.container {}
+    &.container {
+        height: 100%;
+    }
 }
