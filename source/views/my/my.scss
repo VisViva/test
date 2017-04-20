@@ -1,0 +1,27 @@
+.my-component {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    &>.center {
+        margin: auto;
+        &>form {
+            width: 250px;
+            &>button {
+                width: 100%;
+            }
+        }
+        &>p {
+            text-align: center;
+            &:first-of-type {
+                margin-top: 20px;
+            }
+            &>strong {
+                cursor: pointer;
+            }
+        }
+    }
+}

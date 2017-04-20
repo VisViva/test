@@ -71,6 +71,24 @@ angular.module('app', [
                         return deferred.promise;
                     }
                 }
+            })
+            .state('my', {
+                url: '/my',
+                template: '<my></my>',
+                resolve: {
+                    lazyLoad($q, $ocLazyLoad) {
+                        "ngInject";
+                        let deferred = $q.defer();
+                        require.ensure([], function() {
+                            let module = require('./views/my/my');
+                            $ocLazyLoad.load({
+                                name: module.default.name
+                            });
+                            deferred.resolve(module);
+                        });
+                        return deferred.promise;
+                    }
+                }
             });
         $urlRouterProvider.otherwise('signup');
     })
