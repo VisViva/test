@@ -26,6 +26,7 @@ import 'bootstrap/dist/css/bootstrap.css';
  */
 
 import AppComponent from './app.component';
+import Views from './views/views';
 
 /**
  * Declare module
@@ -33,7 +34,8 @@ import AppComponent from './app.component';
 
 angular.module('app', [
         uiRouter,
-        ocLazyLoad
+        ocLazyLoad,
+        Views
     ])
     .service('StoreService', StoreService)
     .service('AuthorizationService', AuthorizationService)
@@ -67,21 +69,7 @@ angular.module('app', [
             })
             .state('login', {
                 url: '/login',
-                template: '<login></login>',
-                resolve: {
-                    lazyLoad($q, $ocLazyLoad) {
-                        "ngInject";
-                        let deferred = $q.defer();
-                        require.ensure([], function() {
-                            let module = require('./views/login/login');
-                            $ocLazyLoad.load({
-                                name: module.default.name
-                            });
-                            deferred.resolve(module);
-                        });
-                        return deferred.promise;
-                    }
-                }
+                template: '<login></login>'
             })
             .state('my', {
                 url: '/my',

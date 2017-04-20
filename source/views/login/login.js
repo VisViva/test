@@ -8,6 +8,7 @@ import loginComponent from './login.component';
 let loginModule = angular.module('login', [
         uiRouter
     ])
-    .component('login', loginComponent);
+    .component('login', loginComponent)
+    .name;
 
 export default loginModule;

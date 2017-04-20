@@ -8,7 +8,7 @@ export class StoreService {
 
         this._token = null;
         this._username = null;
-        this._error = null;
+        this._modal = false;
         this._subscribers = {
             token: [],
             username: []
@@ -23,8 +23,8 @@ export class StoreService {
         this.set('username', username);
     }
 
-    setError(error) {
-        this.set('error', error);
+    setModal(value) {
+        this.set('modal', value);
     }
 
     getToken() {
@@ -35,8 +35,8 @@ export class StoreService {
         return this._username;
     }
 
-    getError() {
-        return this._error;
+    getModal() {
+        return this._modal;
     }
 
     set(key, value) {

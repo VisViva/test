@@ -23,7 +23,7 @@ export class AuthorizationService {
             },
             error => {
                 this._StoreService.setUsername(null);
-                this._StoreService.setError(error);
+                this._StoreService.setModal(true);
             }
         );
     }
@@ -38,12 +38,12 @@ export class AuthorizationService {
             }
         }).then(
             response => {
+                this._StoreService.setModal(false);
                 this._StoreService.setToken(response.token);
                 this._$state.go('my');
             },
             error => {
                 this._StoreService.setToken(null);
-                this._StoreService.setError(error);
             }
         );
     }

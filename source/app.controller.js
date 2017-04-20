@@ -4,10 +4,14 @@ class AppController {
 
         this._StoreService = StoreService;
 
-        this.error = null;
-        this._StoreService.subscribe('error', (error) => {
-            this.error = error;
+        this.modal = false;
+        this._StoreService.subscribe('modal', (value) => {
+            this.modal = value;
         });
+    }
+
+    dismissModal() {
+        this.modal = false;
     }
 }
 
