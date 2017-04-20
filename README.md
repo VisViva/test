@@ -1,3 +1,23 @@
+## Current Progress
+
+	+ Write user stories
+	+ Draw approximate mockups
+	+ Figure out approximate directory structure
+	+ Do estimations
+	+ Setup application seed
+	+ Setup tests
+	+ Implement static markup
+
+	Total time spent working on the task as of now: ~4.5h
+
+	Still have to do:
+
+	- Refactor code and remove duplication
+	- Implement atomic components
+	- Implement http mocks
+	- Implement basic jwt handling
+	- Implement authorization based routing
+
 ## User Stories:
 
 [EN]
@@ -90,3 +110,4 @@ Mockups url: http://tiny.cc/voinky
 	Tests
 
 	~ 1-2 hours
+
