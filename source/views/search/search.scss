@@ -1,0 +1,45 @@
+.search-component {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    &>.center {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 80%;
+        margin: auto;
+        &>section {
+            display: flex;
+            flex-direction: row;
+            margin: 0 auto;
+            &>button {
+                margin: 0 10px;
+                width: 150px
+            }
+        }
+        &>p {
+            margin: 50px auto;
+        }
+        tr {
+            &>td,
+            &>th {
+                width: 40%;
+                text-align: left;
+            }
+            &>td:nth-child(3),
+            &>th:nth-child(3) {
+                width: 20%;
+                text-align: right;
+            }
+        }
+    }
+    input {
+        display: inline;
+        width: auto;
+        margin-left: 10px;
+    }
+}

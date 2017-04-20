@@ -1,5 +1,7 @@
 class SignupController {
-    constructor() {}
+    constructor() {
+
+    }
 }
 
 export default SignupController;
