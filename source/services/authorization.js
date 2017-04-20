@@ -7,24 +7,21 @@ export class AuthorizationService {
         'ngInject';
 
         this._$http = $http;
+        this._StoreService = StoreService;
     }
 
-    signup(name, surname, email, password) {
+    signup(user) {
         return this._$http({
             url: '/api/users',
             method: 'POST',
-            data: {
-                name,
-                surname,
-                email,
-                password
-            }
+            data: user
         }).then(
             response => {
-                StoreService.setUsername(response.username);
+                this._StoreService.setUsername(response.username);
             },
             error => {
-                StoreService.setUsername(null);
+                this._StoreService.setUsername(null);
+                this._StoreService.setError(error);
             }
         );
     }
@@ -39,10 +36,11 @@ export class AuthorizationService {
             }
         }).then(
             response => {
-                StoreService.setToken(response.token);
+                this._StoreService.setToken(response.token);
             },
             error => {
-                StoreService.setToken(null);
+                this._StoreService.setToken(null);
+                this._StoreService.setError(error);
             }
         );
     }
