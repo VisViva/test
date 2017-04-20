@@ -16,7 +16,7 @@ export class StoreService {
     }
 
     setToken(token) {
-        this.set('token', this.token);
+        this.set('token', token);
     }
 
     setUsername(username) {

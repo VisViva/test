@@ -1,5 +1,5 @@
 class AppController {
-    constructor(StoreService) {
+    constructor($transitions, $state, StoreService) {
         "ngInject";
 
         this._StoreService = StoreService;
@@ -7,6 +7,18 @@ class AppController {
         this.modal = false;
         this._StoreService.subscribe('modal', (value) => {
             this.modal = value;
+        });
+
+        $transitions.onStart({ to: '*' }, (trans) => {
+            let next = trans.to().url;
+            switch (next) {
+                case '/my':
+                case '/all':
+                case '/search':
+                    if (!this._StoreService.getToken()) {
+                        return $state.target('login');
+                    }
+            }
         });
     }
 

@@ -1,5 +1,5 @@
 class SignupController {
-    constructor(AuthorizationService, StoreService) {
+    constructor(AuthorizationService) {
         "ngInject";
 
         this._AuthorizationService = AuthorizationService;
@@ -11,7 +11,7 @@ class SignupController {
         };
     }
 
-    signup = () => {
+    signup() {
         this._AuthorizationService.signup(this.user);
     }
 }

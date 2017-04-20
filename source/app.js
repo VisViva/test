@@ -49,6 +49,10 @@ angular.module('app', [
                 abstract: true,
                 template: '<app></app>'
             })
+            .state('login', {
+                url: '/login',
+                template: '<login></login>'
+            })
             .state('signup', {
                 url: '/signup',
                 template: '<signup></signup>',
@@ -67,11 +71,7 @@ angular.module('app', [
                     }
                 }
             })
-            .state('login', {
-                url: '/login',
-                template: '<login></login>'
-            })
-            .state('my', {
+            .state('auth-my', {
                 url: '/my',
                 template: '<my></my>',
                 resolve: {
@@ -89,7 +89,7 @@ angular.module('app', [
                     }
                 }
             })
-            .state('search', {
+            .state('auth-search', {
                 url: '/search',
                 template: '<search></search>',
                 resolve: {
@@ -107,7 +107,7 @@ angular.module('app', [
                     }
                 }
             })
-            .state('all', {
+            .state('auth-all', {
                 url: '/all',
                 template: '<all></all>',
                 resolve: {
