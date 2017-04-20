@@ -16,15 +16,15 @@ export class StoreService {
     }
 
     setToken(token) {
-        set('token', this.token);
+        this.set('token', this.token);
     }
 
     setUsername(username) {
-        set('username', username);
+        this.set('username', username);
     }
 
     setError(error) {
-        set('error', error);
+        this.set('error', error);
     }
 
     getToken() {

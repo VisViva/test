@@ -3,10 +3,11 @@
  */
 
 export class AuthorizationService {
-    constructor($http, StoreService) {
+    constructor($http, $state, StoreService) {
         'ngInject';
 
         this._$http = $http;
+        this._$state = $state;
         this._StoreService = StoreService;
     }
 
@@ -18,6 +19,7 @@ export class AuthorizationService {
         }).then(
             response => {
                 this._StoreService.setUsername(response.username);
+                this._$state.go('login');
             },
             error => {
                 this._StoreService.setUsername(null);
@@ -37,6 +39,7 @@ export class AuthorizationService {
         }).then(
             response => {
                 this._StoreService.setToken(response.token);
+                this._$state.go('my');
             },
             error => {
                 this._StoreService.setToken(null);
