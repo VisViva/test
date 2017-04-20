@@ -18,6 +18,13 @@ class AppController {
                     if (!this._StoreService.getToken()) {
                         return $state.target('login');
                     }
+                    break;
+                case '/login':
+                case '/signup':
+                    if (this._StoreService.getToken()) {
+                        return $state.target('my');
+                    }
+                    break;
             }
         });
     }
