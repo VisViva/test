@@ -1,27 +1,45 @@
 .my-component {
+    position: absolute;
     display: flex;
     flex-direction: column;
-    position: absolute;
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
     &>.center {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 80%;
         margin: auto;
-        &>form {
-            width: 250px;
+        &>section {
+            display: flex;
+            flex-direction: row;
+            margin: 0 auto;
             &>button {
-                width: 100%;
+                margin: 0 10px;
+                width: 150px
             }
         }
         &>p {
-            text-align: center;
-            &:first-of-type {
-                margin-top: 20px;
+            margin: 50px auto;
+        }
+        tr {
+            &>td,
+            &>th {
+                width: 40%;
+                text-align: left;
             }
-            &>strong {
-                cursor: pointer;
+            &>td:nth-child(3),
+            &>th:nth-child(3) {
+                width: 20%;
+                text-align: right;
             }
         }
+    }
+    input {
+        display: inline;
+        width: auto;
+        margin-left: 10px;
     }
 }

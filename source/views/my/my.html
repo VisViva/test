@@ -1,15 +1,49 @@
 <div class="my-component">
     <div class="center">
-        <form>
-            <div class="form-group">
-                <label for="formGroupInputEmail">E-mail</label>
-                <input type="email" class="form-control" id="formGroupInputEmail" placeholder="E-mail">
-            </div>
-            <div class="form-group">
-                <label for="formGroupInputPassword">Password</label>
-                <input type="password" class="form-control" id="formGroupInputPassword" placeholder="Password">
-            </div>
-            <button type="submit" class="btn btn-primary">My</button>
-        </form>
+        <section>
+            <button type="submit" class="btn btn-primary">All Contacts</button>
+            <button type="submit" class="btn btn-primary">My Contacts</button>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </section>
+        <p>My Contacts</p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Type:
+                        <input type="text" class="form-control"></input>
+                    </th>
+                    <th>Contact:
+                        <input type="text" class="form-control"></input>
+                    </th>
+                    <th>Add</th>
+                </tr>
+            </thead>
+        </table>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Contact</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>E-mail</td>
+                    <td>test@test.com</td>
+                    <td><span>Edit</span>&nbsp;<span>Delete</span></td>
+                </tr>
+                <tr>
+                    <td>E-mail</td>
+                    <td>test@test.com</td>
+                    <td><span>Edit</span>&nbsp;<span>Delete</span></td>
+                </tr>
+                <tr>
+                    <td>E-mail</td>
+                    <td>test@test.com</td>
+                    <td><span>Edit</span>&nbsp;<span>Delete</span></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
