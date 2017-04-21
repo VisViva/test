@@ -7,16 +7,16 @@
 	+ Setup application seed
 	+ Setup tests
 	+ Implement static markup
+	+ Implement http mocks
+	+ Implement basic jwt handling
+	+ Implement authorization based routing
 
-	Total time spent working on the task as of now: ~4.5h
+	Total time spent working on the task as of now: ~9.5h
 
 	Still have to do:
 
 	- Refactor code and remove duplication
 	- Implement atomic components
-	- Implement http mocks
-	- Implement basic jwt handling
-	- Implement authorization based routing
 
 ## User Stories:
 
