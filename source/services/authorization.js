@@ -29,7 +29,6 @@ export class AuthorizationService {
         //         this._StoreService.setUsername(null);
         //     }
         // );
-
         this._StoreService.setUsername('John');
         this._$state.transitionTo('login');
     }
@@ -46,7 +45,7 @@ export class AuthorizationService {
         //     response => {
         //         this._StoreService.setModal(false);
         //         this._StoreService.setToken(response.data.token);
-        //         this._$state.go('my');
+        //         this._$state.go('auth-all');
         //     },
         //     error => {
         //         switch (error.status) {
@@ -56,8 +55,8 @@ export class AuthorizationService {
         //         this._StoreService.setToken(null);
         //     }
         // );
-
+        this._StoreService.setModal(false);
         this._StoreService.setToken('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ');
-        this._$state.transitionTo('auth-my');
+        this._$state.transitionTo('auth-all');
     }
 }

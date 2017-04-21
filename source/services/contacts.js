@@ -37,6 +37,7 @@ export class ContactsService {
         //                 break;
         //         }
         //         this._StoreService.setAllContacts([]);
+        //         this._StoreService.setToken(null);
         //     }
         // );
         const deferred = this._$q.defer();
@@ -92,7 +93,7 @@ export class ContactsService {
         //     url: '/api/contacts',
         //     method: 'GET',
         //     headers: {
-        //         'Authorization': this._StoreService.getToken()
+        //         'Authorization': `Bearer ${this._StoreService.getToken()}`
         //     }
         // }).then(
         //     response => {
@@ -111,6 +112,7 @@ export class ContactsService {
         //                 break;
         //         }
         //         this._StoreService.setMyContacts([]);
+        //         this._StoreService.setToken(null);
         //     }
         // );
         const deferred = this._$q.defer();
@@ -155,7 +157,7 @@ export class ContactsService {
         //     method: 'DELETE',
         //     data: { id }
         //     headers: {
-        //         'Authorization': this._StoreService.getToken()
+        //         'Authorization': `Bearer ${this._StoreService.getToken()}`
         //     }
         // }).then(
         //     response => {
@@ -174,6 +176,7 @@ export class ContactsService {
         //                 break;
         //         }
         //         this._StoreService.setMyContacts([]);
+        //         this._StoreService.setToken(null);
         //     }
         // );
         const deferred = this._$q.defer();
@@ -192,7 +195,7 @@ export class ContactsService {
         //     method: 'PUT',
         //     data: contact,
         //     headers: {
-        //         'Authorization': this._StoreService.getToken()
+        //         'Authorization': `Bearer ${this._StoreService.getToken()}`
         //     }
         // }).then(
         //     response => {
@@ -208,6 +211,7 @@ export class ContactsService {
         //                 this._StoreService.setModal(true);
         //                 break;
         //         }
+        //         this._StoreService.setToken(null);
         //     }
         // );
         const deferred = this._$q.defer();
@@ -223,7 +227,7 @@ export class ContactsService {
         //     method: 'POST',
         //     data: contact,
         //     headers: {
-        //         'Authorization': this._StoreService.getToken()
+        //         'Authorization': `Bearer ${this._StoreService.getToken()}`
         //     }
         // }).then(
         //     response => {
@@ -239,6 +243,7 @@ export class ContactsService {
         //                 this._StoreService.setModal(true);
         //                 break;
         //         }
+        //         this._StoreService.setToken(null);
         //     }
         // );
         const deferred = this._$q.defer();
@@ -247,6 +252,69 @@ export class ContactsService {
             contact.id = Math.floor(1000 + Math.random() * 20);
             mutatedContacts.push(contact);
             this._StoreService.setMyContacts(mutatedContacts);
+            deferred.resolve();
+        }, 200);
+        return deferred.promise;
+    }
+
+    searchContacts(searchString) {
+        // return this._$http({
+        //     url: '/api/search',
+        //     method: 'GET',
+        //     params: { q: searchString },
+        //     headers: {
+        //         'Authorization': `Bearer ${this._StoreService.getToken()}`
+        //     }
+        // }).then(
+        //     response => {
+        //         if (response.data.success) {
+        //             this._StoreService.setSearchContacts(response.data.data);
+        //         } else {
+        //             this._StoreService.setSearchContacts([]);
+        //         }
+        //     },
+        //     error => {
+        //         switch (error.status) {
+        //             case 400:
+        //                 break;
+        //             case 401:
+        //                 this._StoreService.setModal(true);
+        //                 break;
+        //         }
+        //         this._StoreService.setToken(null);
+        //     }
+        // );
+        const deferred = this._$q.defer();
+        this._$timeout(() => {
+            this._StoreService.setSearchContacts([{
+                id: 0,
+                text: '+8789567765',
+                type: 'phone'
+            }, {
+                id: 1,
+                text: '+7575757575',
+                type: 'phone'
+            }, {
+                id: 2,
+                text: '+7123123123',
+                type: 'phone'
+            }, {
+                id: 3,
+                text: '+2465276574',
+                type: 'phone'
+            }, {
+                id: 4,
+                text: '+3467578567',
+                type: 'phone'
+            }, {
+                id: 5,
+                text: '+7575757575',
+                type: 'phone'
+            }, {
+                id: 6,
+                text: '+2346998746',
+                type: 'phone'
+            }]);
             deferred.resolve();
         }, 200);
         return deferred.promise;
