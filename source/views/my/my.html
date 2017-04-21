@@ -12,6 +12,7 @@
                     <th>Index</th>
                     <th>Type</th>
                     <th>Contact</th>
+                    <th>Operations</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,6 +20,7 @@
                     <td>{{$index}}</td>
                     <td>{{contact.type}}</td>
                     <td>{{contact.text}}</td>
+                    <td ng-click="$ctrl.delete(contact.id)">Delete</td>
                 </tr>
             </tbody>
         </table>

@@ -49,6 +49,10 @@ export class StoreService {
         return this._modal;
     }
 
+    getMyContacts(value) {
+        return this._myContacts;
+    }
+
     set(key, value) {
         this[`_${key}`] = value;
         if (this._subscribers[key]) {

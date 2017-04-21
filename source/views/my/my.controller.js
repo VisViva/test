@@ -20,6 +20,10 @@ class MyController {
     $onDestroy = function() {
         this._StoreService.unSubscribe('myContacts', this.handler);
     }
+
+    delete(id) {
+        this._ContactsService.deleteMyContact(id);
+    }
 }
 
 export default MyController;

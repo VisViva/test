@@ -143,4 +143,36 @@ export class ContactsService {
             surname: 'Smith'
         });
     }
+
+    deleteMyContact(id) {
+        // return this._$http({
+        //     url: '/api/contacts',
+        //     method: 'DELETE',
+        //     data: { id }
+        //     headers: {
+        //         'Authorization': this._StoreService.getToken()
+        //     }
+        // }).then(
+        //     response => {
+        //         if (response.data.success) {
+        //             let mutatedContacts = JSON.parse(JSON.stringify(this._StoreService.getMyContacts));
+        //             mutatedContacts.contacts = mutatedContacts.contacts.filter(value => value.id !== id);
+        //             this._StoreService.setMyContacts(mutatedContacts);
+        //         }
+        //     },
+        //     error => {
+        //         switch (error.status) {
+        //             case 400:
+        //                 break;
+        //             case 401:
+        //                 this._StoreService.setModal(true);
+        //                 break;
+        //         }
+        //         this._StoreService.setMyContacts([]);
+        //     }
+        // );
+        let mutatedContacts = JSON.parse(JSON.stringify(this._StoreService.getMyContacts()));
+        mutatedContacts.contacts = mutatedContacts.contacts.filter(value => value.id !== id);
+        this._StoreService.setMyContacts(mutatedContacts);
+    }
 }
