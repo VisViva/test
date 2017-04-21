@@ -171,7 +171,7 @@ export class ContactsService {
         //         this._StoreService.setMyContacts([]);
         //     }
         // );
-        let mutatedContacts = JSON.parse(JSON.stringify(this._StoreService.getMyContacts()));
+        let mutatedContacts = this._StoreService.getMyContacts();
         mutatedContacts.contacts = mutatedContacts.contacts.filter(value => value.id !== id);
         this._StoreService.setMyContacts(mutatedContacts);
     }

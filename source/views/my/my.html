@@ -20,7 +20,10 @@
                     <td>{{$index}}</td>
                     <td>{{contact.type}}</td>
                     <td>{{contact.text}}</td>
-                    <td ng-click="$ctrl.delete(contact.id)">Delete</td>
+                    <td>
+                        <span ng-click="$ctrl.delete(contact.id)">Edit</span>
+                        <span ng-click="$ctrl.delete(contact.id)">Delete</span>
+                    </td>
                 </tr>
             </tbody>
         </table>

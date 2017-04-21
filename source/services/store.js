@@ -17,6 +17,10 @@ export class StoreService {
         };
     }
 
+    deepClone(object) {
+        return JSON.parse(JSON.stringify(object));
+    }
+
     setToken(token) {
         this.set('token', `Bearer ${token}`);
     }
@@ -50,11 +54,11 @@ export class StoreService {
     }
 
     getMyContacts(value) {
-        return this._myContacts;
+        return this.deepClone(this._myContacts);
     }
 
     set(key, value) {
-        this[`_${key}`] = value;
+        this[`_${key}`] = this.deepClone(value);
         if (this._subscribers[key]) {
             for (let i = 0; i < this._subscribers[key].length; ++i) {
                 this._subscribers[key][i](value);
