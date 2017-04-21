@@ -25,9 +25,6 @@ export class AuthorizationService {
         //         switch (error.status) {
         //             case 400:
         //                 break;
-        //             case 401:
-        //                 this._StoreService.setModal(true);
-        //                 break;
         //         }
         //         this._StoreService.setUsername(null);
         //     }
@@ -54,9 +51,6 @@ export class AuthorizationService {
         //     error => {
         //         switch (error.status) {
         //             case 400:
-        //                 break;
-        //             case 401:
-        //                 this._StoreService.setModal(true);
         //                 break;
         //         }
         //         this._StoreService.setToken(null);

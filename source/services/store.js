@@ -10,6 +10,7 @@ export class StoreService {
         this._username = null;
         this._modal = false;
         this._allContacts = [];
+        this._myContacts = [];
         this._subscribers = {
             token: [],
             username: []
@@ -30,6 +31,10 @@ export class StoreService {
 
     setAllContacts(value) {
         this.set('allContacts', value);
+    }
+
+    setMyContacts(value) {
+        this.set('myContacts', value);
     }
 
     getToken() {

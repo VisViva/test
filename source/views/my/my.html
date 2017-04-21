@@ -9,39 +9,16 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Type:
-                        <input type="text" class="form-control"></input>
-                    </th>
-                    <th>Contact:
-                        <input type="text" class="form-control"></input>
-                    </th>
-                    <th>Add</th>
-                </tr>
-            </thead>
-        </table>
-        <table class="table table-striped">
-            <thead>
-                <tr>
+                    <th>Index</th>
                     <th>Type</th>
                     <th>Contact</th>
-                    <th>Operations</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>E-mail</td>
-                    <td>test@test.com</td>
-                    <td><span>Edit</span>&nbsp;<span>Delete</span></td>
-                </tr>
-                <tr>
-                    <td>E-mail</td>
-                    <td>test@test.com</td>
-                    <td><span>Edit</span>&nbsp;<span>Delete</span></td>
-                </tr>
-                <tr>
-                    <td>E-mail</td>
-                    <td>test@test.com</td>
-                    <td><span>Edit</span>&nbsp;<span>Delete</span></td>
+                <tr ng-repeat="contact in $ctrl.contacts.contacts track by $index">
+                    <td>{{$index}}</td>
+                    <td>{{contact.type}}</td>
+                    <td>{{contact.text}}</td>
                 </tr>
             </tbody>
         </table>

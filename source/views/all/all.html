@@ -11,12 +11,14 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
+                        <th>Index</th>
                         <th>Type</th>
                         <th>Contact</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="contact in person.contacts track by $index">
+                        <td>{{$index}}</td>
                         <td>{{contact.type}}</td>
                         <td>{{contact.text}}</td>
                     </tr>
