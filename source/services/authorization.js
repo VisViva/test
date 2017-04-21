@@ -18,17 +18,21 @@ export class AuthorizationService {
         //     data: user
         // }).then(
         //     response => {
-        //         this._StoreService.setUsername(response.username);
+        //         this._StoreService.setUsername(response.data.username);
         //         this._$state.go('login');
         //     },
         //     error => {
         //         switch (error.status) {
         //             case 400:
         //                 break;
+        //             case 401:
+        //                 this._StoreService.setModal(true);
+        //                 break;
         //         }
         //         this._StoreService.setUsername(null);
         //     }
         // );
+
         this._StoreService.setUsername('John');
         this._$state.transitionTo('login');
     }
@@ -44,7 +48,7 @@ export class AuthorizationService {
         // }).then(
         //     response => {
         //         this._StoreService.setModal(false);
-        //         this._StoreService.setToken(response.token);
+        //         this._StoreService.setToken(response.data.token);
         //         this._$state.go('my');
         //     },
         //     error => {
@@ -52,6 +56,7 @@ export class AuthorizationService {
         //             case 400:
         //                 break;
         //             case 401:
+        //                 this._StoreService.setModal(true);
         //                 break;
         //         }
         //         this._StoreService.setToken(null);

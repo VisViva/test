@@ -9,6 +9,7 @@ export class StoreService {
         this._token = null;
         this._username = null;
         this._modal = false;
+        this._allContacts = [];
         this._subscribers = {
             token: [],
             username: []
@@ -16,7 +17,7 @@ export class StoreService {
     }
 
     setToken(token) {
-        this.set('token', token);
+        this.set('token', `Bearer ${token}`);
     }
 
     setUsername(username) {
@@ -25,6 +26,10 @@ export class StoreService {
 
     setModal(value) {
         this.set('modal', value);
+    }
+
+    setAllContacts(value) {
+        this.set('allContacts', value);
     }
 
     getToken() {
