@@ -1,3 +1,9 @@
+## Usage
+
+	npm start (for development purposes)
+	npm run build (for production purposes)
+	npm run test (testing)
+
 ## Current Progress
 
 	+ Write user stories
