@@ -1,7 +1,7 @@
-import AllModule from './search'
-import AllController from './search.controller';
-import AllComponent from './search.component';
-import AllTemplate from './search.html';
+import AllModule from './all'
+import AllController from './all.controller';
+import AllComponent from './all.component';
+import AllTemplate from './all.html';
 
 describe('All', () => {
     let $rootScope, makeController;
