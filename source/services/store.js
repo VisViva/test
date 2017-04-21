@@ -10,10 +10,15 @@ export class StoreService {
         this._username = null;
         this._modal = false;
         this._allContacts = [];
+        this._myContacts = [];
         this._subscribers = {
             token: [],
             username: []
         };
+    }
+
+    deepClone(object) {
+        return JSON.parse(JSON.stringify(object));
     }
 
     setToken(token) {
@@ -32,6 +37,10 @@ export class StoreService {
         this.set('allContacts', value);
     }
 
+    setMyContacts(value) {
+        this.set('myContacts', value);
+    }
+
     getToken() {
         return this._token;
     }
@@ -44,8 +53,12 @@ export class StoreService {
         return this._modal;
     }
 
+    getMyContacts(value) {
+        return this.deepClone(this._myContacts);
+    }
+
     set(key, value) {
-        this[`_${key}`] = value;
+        this[`_${key}`] = this.deepClone(value);
         if (this._subscribers[key]) {
             for (let i = 0; i < this._subscribers[key].length; ++i) {
                 this._subscribers[key][i](value);
