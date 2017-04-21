@@ -2,6 +2,7 @@
 
 	npm start (for development purposes)
 	npm run build (for production purposes)
+	npm run serve (serve after building)
 	npm run test (testing)
 
 ## Current Progress
