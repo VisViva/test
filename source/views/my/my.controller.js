@@ -1,6 +1,6 @@
 class MyController {
-    constructor() {
-
+    constructor(StoreService) {
+        "ngInject";
     }
 }
 

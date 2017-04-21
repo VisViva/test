@@ -7,6 +7,14 @@ import uiRouter from 'angular-ui-router';
 import ocLazyLoad from 'oclazyload';
 
 /**
+ * Modules
+ */
+
+import { StoreService } from './services/store';
+import { AuthorizationService } from './services/authorization';
+import { ContactsService } from './services/contacts';
+
+/**
  * Vendor styles
  */
 
@@ -18,6 +26,7 @@ import 'bootstrap/dist/css/bootstrap.css';
  */
 
 import AppComponent from './app.component';
+import Views from './views/views';
 
 /**
  * Declare module
@@ -25,8 +34,12 @@ import AppComponent from './app.component';
 
 angular.module('app', [
         uiRouter,
-        ocLazyLoad
+        ocLazyLoad,
+        Views
     ])
+    .service('StoreService', StoreService)
+    .service('AuthorizationService', AuthorizationService)
+    .service('ContactsService', ContactsService)
     .config(($locationProvider, $stateProvider, $urlRouterProvider) => {
         "ngInject";
         $locationProvider.html5Mode(true).hashPrefix('!');
@@ -35,6 +48,10 @@ angular.module('app', [
                 url: '',
                 abstract: true,
                 template: '<app></app>'
+            })
+            .state('login', {
+                url: '/login',
+                template: '<login></login>'
             })
             .state('signup', {
                 url: '/signup',
@@ -54,25 +71,7 @@ angular.module('app', [
                     }
                 }
             })
-            .state('login', {
-                url: '/login',
-                template: '<login></login>',
-                resolve: {
-                    lazyLoad($q, $ocLazyLoad) {
-                        "ngInject";
-                        let deferred = $q.defer();
-                        require.ensure([], function() {
-                            let module = require('./views/login/login');
-                            $ocLazyLoad.load({
-                                name: module.default.name
-                            });
-                            deferred.resolve(module);
-                        });
-                        return deferred.promise;
-                    }
-                }
-            })
-            .state('my', {
+            .state('auth-my', {
                 url: '/my',
                 template: '<my></my>',
                 resolve: {
@@ -90,7 +89,7 @@ angular.module('app', [
                     }
                 }
             })
-            .state('search', {
+            .state('auth-search', {
                 url: '/search',
                 template: '<search></search>',
                 resolve: {
@@ -108,7 +107,7 @@ angular.module('app', [
                     }
                 }
             })
-            .state('all', {
+            .state('auth-all', {
                 url: '/all',
                 template: '<all></all>',
                 resolve: {

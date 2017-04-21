@@ -1,10 +1,25 @@
 html,
 body {
     background: #f9f9f9;
+    height: 100%;
 }
 
 .app {
     &.container {
         height: 100%;
+        .router {
+            height: 100%;
+        }
+    }
+    .modal {
+        transition: all 1s;
+        display: flex;
+        pointer-events: all;
+        .modal-dialog {
+            margin: auto;
+        }
+    }
+    .fade {
+        pointer-events: none;
     }
 }
