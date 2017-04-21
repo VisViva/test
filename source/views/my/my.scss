@@ -23,27 +23,32 @@
             margin: 50px auto;
             text-align: center;
         }
-        tr {
-            &>td,
-            &>th {
-                width: 25%;
-                text-align: left;
+        .list {
+            tr {
+                &>td,
+                &>th {
+                    width: 25%;
+                    text-align: left;
+                }
+                &>td:nth-child(1),
+                &>th:nth-child(1) {
+                    width: 5%;
+                    text-align: left;
+                }
+                &>td:nth-child(4),
+                &>th:nth-child(4) {
+                    text-align: right;
+                }
             }
-            &>td:nth-child(1),
-            &>th:nth-child(1) {
-                width: 5%;
-                text-align: left;
-            }
-            &>td:nth-child(4),
-            &>th:nth-child(4) {
-                text-align: right;
+            input {
+                display: inline;
+                margin-left: 0;
+                height: 20px;
             }
         }
-    }
-    input {
-        display: inline;
-        margin-left: 0;
-        height: 20px;
+        .add {
+            margin-bottom: 40px;
+        }
     }
     span {
         cursor: pointer;

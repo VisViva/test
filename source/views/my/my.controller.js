@@ -4,6 +4,10 @@ class MyController {
 
         this.contacts = [];
         this.editing = [];
+        this.newContact = {
+            type: '',
+            text: ''
+        };
 
         this._ContactsService = ContactsService;
         this._StoreService = StoreService;
@@ -33,6 +37,16 @@ class MyController {
     save(contact) {
         this._ContactsService.saveMyContact(contact).then(() => {
             this.editing[contact.id] = false;
+        });
+    }
+
+    add() {
+        this._ContactsService.addMyContact({
+            type: this.newContact.type,
+            text: this.newContact.text
+        }).then(() => {
+            this.newContact.type = '';
+            this.newContact.text = '';
         });
     }
 }

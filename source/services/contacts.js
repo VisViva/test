@@ -216,4 +216,39 @@ export class ContactsService {
         }, 200);
         return deferred.promise;
     }
+
+    addMyContact(contact) {
+        // return this._$http({
+        //     url: '/api/contacts',
+        //     method: 'POST',
+        //     data: contact,
+        //     headers: {
+        //         'Authorization': this._StoreService.getToken()
+        //     }
+        // }).then(
+        //     response => {
+        //         let mutatedContacts = this._StoreService.getMyContacts();
+        //         mutatedContacts.push(response.data);
+        //         this._StoreService.setMyContacts(mutatedContacts);
+        //     },
+        //     error => {
+        //         switch (error.status) {
+        //             case 400:
+        //                 break;
+        //             case 401:
+        //                 this._StoreService.setModal(true);
+        //                 break;
+        //         }
+        //     }
+        // );
+        const deferred = this._$q.defer();
+        this._$timeout(() => {
+            let mutatedContacts = this._StoreService.getMyContacts();
+            contact.id = Math.floor(1000 + Math.random() * 20);
+            mutatedContacts.push(contact);
+            this._StoreService.setMyContacts(mutatedContacts);
+            deferred.resolve();
+        }, 200);
+        return deferred.promise;
+    }
 }
