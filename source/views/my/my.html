@@ -16,12 +16,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="contact in $ctrl.contacts.contacts track by $index">
+                <tr ng-repeat="contact in $ctrl.contacts track by $index">
                     <td>{{$index}}</td>
-                    <td>{{contact.type}}</td>
-                    <td>{{contact.text}}</td>
                     <td>
-                        <span ng-click="$ctrl.delete(contact.id)">Edit</span>
+                        <span ng-show="!$ctrl.editing[contact.id]">{{contact.text}}</span>
+                        <input ng-show="$ctrl.editing[contact.id]" ng-model="contact.text" type="text" class="form-control" placeholder="Contact Text">
+                    </td>
+                    <td>
+                        <span ng-show="!$ctrl.editing[contact.id]">{{contact.type}}</span>
+                        <input ng-show="$ctrl.editing[contact.id]" ng-model="contact.type" type="text" class="form-control" placeholder="Contact Type">
+                    </td>
+                    <td>
+                        <span ng-show="!$ctrl.editing[contact.id]" ng-click="$ctrl.edit(contact.id)">Edit</span>
+                        <span ng-show="$ctrl.editing[contact.id]" ng-click="$ctrl.save(contact)">Save</span>
                         <span ng-click="$ctrl.delete(contact.id)">Delete</span>
                     </td>
                 </tr>

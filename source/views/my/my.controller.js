@@ -3,6 +3,7 @@ class MyController {
         "ngInject";
 
         this.contacts = [];
+        this.editing = [];
 
         this._ContactsService = ContactsService;
         this._StoreService = StoreService;
@@ -23,6 +24,16 @@ class MyController {
 
     delete(id) {
         this._ContactsService.deleteMyContact(id);
+    }
+
+    edit(id) {
+        this.editing[id] = true;
+    }
+
+    save(contact) {
+        this._ContactsService.saveMyContact(contact).then(() => {
+            this.editing[contact.id] = false;
+        });
     }
 }
 
