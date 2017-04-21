@@ -2,14 +2,14 @@ class AllController {
     constructor(ContactsService, StoreService) {
         "ngInject";
 
-        this.allContacts = [];
+        this.persons = [];
 
         this._ContactsService = ContactsService;
         this._StoreService = StoreService;
     }
 
     handler = (allContacts) => {
-        this.allContacts = allContacts;
+        this.persons = allContacts;
     };
 
     $onInit = function() {

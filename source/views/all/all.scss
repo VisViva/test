@@ -7,11 +7,11 @@
     height: 100%;
     width: 100%;
     &>.center {
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        height: 80%;
+        padding-top: 50px;
         margin: auto;
+        .person-name {
+            padding-left: 8px;
+        }
         &>section {
             display: flex;
             flex-direction: row;
@@ -23,6 +23,7 @@
         }
         &>p {
             margin: 50px auto;
+            text-align: center;
         }
         tr {
             &>td,

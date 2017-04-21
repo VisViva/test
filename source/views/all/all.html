@@ -6,44 +6,22 @@
             <button class="btn btn-primary" ui-sref="auth-search">Search</button>
         </section>
         <p>All Contacts</p>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Type:
-                        <input type="text" class="form-control"></input>
-                    </th>
-                    <th>Contact:
-                        <input type="text" class="form-control"></input>
-                    </th>
-                    <th>Add</th>
-                </tr>
-            </thead>
-        </table>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>Contact</th>
-                    <th>Operations</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>E-mail</td>
-                    <td>test@test.com</td>
-                    <td><span>Edit</span>&nbsp;<span>Delete</span></td>
-                </tr>
-                <tr>
-                    <td>E-mail</td>
-                    <td>test@test.com</td>
-                    <td><span>Edit</span>&nbsp;<span>Delete</span></td>
-                </tr>
-                <tr>
-                    <td>E-mail</td>
-                    <td>test@test.com</td>
-                    <td><span>Edit</span>&nbsp;<span>Delete</span></td>
-                </tr>
-            </tbody>
-        </table>
+        <div ng-repeat="person in $ctrl.persons track by $index">
+            <label class="person-name">{{person.name}}&nbsp;{{person.surname}}</label>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="contact in person.contacts track by $index">
+                        <td>{{contact.type}}</td>
+                        <td>{{contact.text}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

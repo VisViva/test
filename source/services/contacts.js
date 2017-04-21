@@ -52,7 +52,7 @@ export class ContactsService {
                     id: 2,
                     text: 'email2@gmail.com',
                     type: 'email'
-                }, ],
+                }],
                 id: 0,
                 name: 'John',
                 surname: 'Smith'
@@ -69,7 +69,53 @@ export class ContactsService {
                     id: 5,
                     text: 'email5@gmail.com',
                     type: 'email'
-                }, ],
+                }, {
+                    id: 6,
+                    text: 'email6@gmail.com',
+                    type: 'email'
+                }],
+                id: 1,
+                name: 'Jack',
+                surname: 'Black'
+            }, {
+                contacts: [{
+                    id: 3,
+                    text: 'email3@gmail.com',
+                    type: 'email'
+                }, {
+                    id: 4,
+                    text: 'email4@gmail.com',
+                    type: 'email'
+                }, {
+                    id: 5,
+                    text: 'email5@gmail.com',
+                    type: 'email'
+                }, {
+                    id: 6,
+                    text: 'email6@gmail.com',
+                    type: 'email'
+                }],
+                id: 1,
+                name: 'Jack',
+                surname: 'Black'
+            }, {
+                contacts: [{
+                    id: 3,
+                    text: 'email3@gmail.com',
+                    type: 'email'
+                }, {
+                    id: 4,
+                    text: 'email4@gmail.com',
+                    type: 'email'
+                }, {
+                    id: 5,
+                    text: 'email5@gmail.com',
+                    type: 'email'
+                }, {
+                    id: 6,
+                    text: 'email6@gmail.com',
+                    type: 'email'
+                }],
                 id: 1,
                 name: 'Jack',
                 surname: 'Black'
